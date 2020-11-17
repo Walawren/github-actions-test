@@ -12,6 +12,6 @@ trap "rm -f $key_file" EXIT
 eval last=$last
 
 # Try to pick the right key
-ssh-add -L | grep --word-regexp --max-count=1 $last > $key_file
+ssh-add -L | grep --max-count=1 $last > $key_file
 
 ssh -i $key_file "$@"

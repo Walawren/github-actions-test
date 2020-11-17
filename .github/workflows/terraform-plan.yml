@@ -17,7 +17,7 @@ jobs:
       ARM_CLIENT_SECRET: ${{secrets.ARM_CLIENT_SECRET}}
       ARM_SUBSCRIPTION_ID: ${{secrets.ARM_SUBSCRIPTION_ID}}
       ARM_TENANT_ID: ${{secrets.ARM_TENANT_ID}}
-      GIT_SSH: ../ssh-deploy-key-wrapper.sh
+      GIT_SSH_COMMAND: ../.github/scripts/ssh-deploy-key-wrapper.sh
 
     steps:
       - uses: actions/checkout@v2

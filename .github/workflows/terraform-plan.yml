@@ -30,7 +30,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1.2.1
         with:
-          terraform_version: 0.12.28
+          terraform_version: 0.13.5
 
       - name: Terraform Format
         id: fmt
@@ -71,3 +71,7 @@ jobs:
               repo: context.repo.repo,
               body: output
             })
+
+      - name: Terraform Plan Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
